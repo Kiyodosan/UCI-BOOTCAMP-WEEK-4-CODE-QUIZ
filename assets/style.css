@@ -1,0 +1,47 @@
+/* Header content */
+.header {
+  /* outline: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .header > h3 {
+  outline: 2px solid red;
+}
+
+.header > p {
+  outline: 2px solid red;
+} */
+
+/* Container content */
+.container {
+  outline: 2px solid blue;
+  dispLay: flex;
+  width: 70vw;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#text {
+  outline: 2px solid yellow;
+  font-size: 20px;
+}
+
+/* #selections {
+  display: none;
+  outline: 2px solid green;
+  font-size: 15px;
+}
+
+#result {
+  display: none;
+  outline: 2px solid red;
+  font-size: 20px;
+} */

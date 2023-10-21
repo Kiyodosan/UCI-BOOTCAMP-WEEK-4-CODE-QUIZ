@@ -20,28 +20,55 @@
 .container {
   outline: 2px solid blue;
   dispLay: flex;
+  flex-direction: column;
+  align-items: center;
   width: 70vw;
   margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#text {
-  outline: 2px solid yellow;
+/* .container > span {
+  outline: 2px solid green;
+} */
+
+.container > button {
+  outline: 2px solid red;
+  font-size: 15px;
+  /* background-color: rgb(243, 175, 111); */
+  color: white;
+  background-color: steelblue;
+}
+
+/* Heading / Question */
+.container > h1 {
+  margin-bottom: 1rem;
   font-size: 20px;
 }
 
-/* #selections {
-  display: none;
-  outline: 2px solid green;
+/* Quiz description */
+.container > p {
+  margin-bottom: 1rem;
   font-size: 15px;
 }
 
-#result {
-  display: none;
-  outline: 2px solid red;
-  font-size: 20px;
-} */
+.container > select {
+  font-size: 18px;
+}
+
+/* Choices */
+.container > select > option {
+  background-color: skyblue;
+}
+
+/* Result (Correct / Wrong) */
+.container > h2 {
+  font-size: 18px;
+  color: grey;
+}
+
+/* Form input */
+.container > form {
+  font-size: 18px;
+}

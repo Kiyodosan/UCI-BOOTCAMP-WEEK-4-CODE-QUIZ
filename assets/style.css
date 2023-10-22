@@ -21,7 +21,7 @@
   outline: 2px solid blue;
   dispLay: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   width: 70vw;
   margin-top: 5rem;
   margin-left: auto;
@@ -36,13 +36,14 @@
 .container > button {
   outline: 2px solid red;
   font-size: 15px;
-  /* background-color: rgb(243, 175, 111); */
   color: white;
   background-color: steelblue;
+  margin-bottom: 1rem;
 }
 
 /* Heading / Question */
 .container > h1 {
+  outline: 2px solid green;
   margin-bottom: 1rem;
   font-size: 20px;
 }
@@ -53,14 +54,16 @@
   font-size: 15px;
 }
 
-.container > select {
+/* Might not need this because the multiple choice options are just separate buttons */
+/* .container > select {
   font-size: 18px;
-}
+} */
+
 
 /* Choices */
-.container > select > option {
+/* .container > select > option {
   background-color: skyblue;
-}
+} */
 
 /* Result (Correct / Wrong) */
 .container > h2 {

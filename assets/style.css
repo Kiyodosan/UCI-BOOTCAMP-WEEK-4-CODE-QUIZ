@@ -38,14 +38,27 @@
   font-size: 15px;
   color: white;
   background-color: steelblue;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
 }
 
-/* Heading / Question */
+/* Heading */
 .container > h1 {
   outline: 2px solid green;
   margin-bottom: 1rem;
+  font-size: 30px;
+}
+
+/* Question */
+.container > h2 {
+  outline: 2px solid purple;
+  margin-bottom: 1rem;
   font-size: 20px;
+}
+
+/* Result (Correct / Wrong) */
+.container > h3 {
+  font-size: 18px;
+  color: grey;
 }
 
 /* Quiz description */
@@ -54,24 +67,8 @@
   font-size: 15px;
 }
 
-/* Might not need this because the multiple choice options are just separate buttons */
-/* .container > select {
-  font-size: 18px;
-} */
-
-
-/* Choices */
-/* .container > select > option {
-  background-color: skyblue;
-} */
-
-/* Result (Correct / Wrong) */
-.container > h2 {
-  font-size: 18px;
-  color: grey;
-}
-
 /* Form input */
 .container > form {
   font-size: 18px;
+  gap: 1rem;
 }

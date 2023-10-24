@@ -3,6 +3,7 @@ let questionList = [];
 let currentQuestion = [];
 let result = document.createElement('h3');
 let timeLeft = document.getElementById("timer");
+let highScores = [];  //////////////////// Might replace this with local storage.
 
 startQuiz();
 
@@ -139,7 +140,6 @@ function generateQuestion(question) {
 
   for (let i = 1; i < multipleChoiceButtons.length; i++) {
     if (i !== answer) {
-      // multipleChoiceButtons[i].value = false;
       multipleChoiceButtons[i].addEventListener('click', function () {
         timeLeft.value -= 10;
         console.log(false);  /////////////////// Test
@@ -147,7 +147,6 @@ function generateQuestion(question) {
         nextPage();
       })
     } else {
-      // multipleChoiceButtons[i].value = true;
       multipleChoiceButtons[i].addEventListener('click', function () {
         console.log(true);  /////////////////// Test
         result.textContent = "Correct";
@@ -172,53 +171,75 @@ function generateQuestion(question) {
   container.appendChild(multipleChoice4);
 }
 
-// Score is recorded and timer is set to 0.
+// Score is recorded and timer is set to 0. User inputs their initials to keep track in local storage.
 function quizComplete() {
   let score = timeLeft.value;
   timeLeft.value = 0;
 
   let completionTitle = document.createElement('h1');
-  let completionText = document.createElement('h2');
-  let completionForm = document.createElement('form');
-
   completionTitle.textContent = "Quiz Complete";
   completionTitle.setAttribute('style', 'align-self: center');
   container.appendChild(completionTitle);
-
+  
+  let completionText = document.createElement('h2');
   completionText.textContent = "Your score: " + score;
   container.appendChild(completionText);
 
-  // Form creation info from https://www.geeksforgeeks.org/how-to-create-a-form-dynamically-with-the-javascript/#
-  completionForm.setAttribute('method', 'post');
-  completionForm.setAttribute('action', 'score-list.txt');  ///////////////// Action attribute needs a proper file to store form data or else the submit button will crash the site.
+  let completionForm = document.createElement('form');
+
   completionForm.textContent = "Enter your initials: ";
 
-  let userInitials = document.createElement('input');
-  userInitials.setAttribute('type', 'text');
-  userInitials.setAttribute('name', 'Initials');
-  userInitials.setAttribute('placeholder', 'Input 2 or 3 characters');
-  completionForm.appendChild(userInitials);
+  let initialsInput = document.createElement('input');
+  initialsInput.setAttribute('type', 'text');
+  initialsInput.setAttribute('name', 'initials');
+  initialsInput.setAttribute('placeholder', 'Input 2 or 3 characters');
+  completionForm.appendChild(initialsInput);
 
   let lineBreak = document.createElement('br');
   completionForm.appendChild(lineBreak);
 
-  let submitButton = document.createElement('input'); /////////////// WARNING: Submit button currently crashes page.
+  let submitButton = document.createElement('input');
   submitButton.setAttribute('type', 'submit');
   submitButton.setAttribute('value', 'Submit');
   submitButton.setAttribute('style', 'margin-top: 1rem');
+  submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    // highScores.push(score);    //////////////// Save score to local storage here (push to an array)
+    let userInitials = initialsInput.value;
+    console.log(userInitials);  /////////////////// Test
+    checkForm(userInitials);
+  });
   completionForm.appendChild(submitButton);
 
   container.appendChild(completionForm);
-
-/*   completionForm.textContent = "Enter your initials: ";
-  container.appendChild(completionForm); */
 }
 
 // Form validation info from https://www.w3schools.com/js/js_validation.asp
 function checkForm(initials) {
-  let formChecker;
+  if (initials.length > 3) {
+    let initialsOver = document.createElement('h3');
+    initialsOver.textContent = "Please use a maximum of 3 characters";
+    container.appendChild(initialsOver);
+  } else if (initials.length === 0) {
+    initialsZero = document.createElement('h3');
+    initialsZero.textContent = "Please enter your initials";
+    container.appendChild(initialsZero);
+  } else if (initials.length === 1) {
+    initialsOne = document.createElement('h3');
+    initialsOne.textContent = "Please use 2 or 3 characters for your initials";
+    container.appendChild(initialsOne);
+  } else {
+    // highScores[length - 1].push(initials)  /////////////////// Save initials to local storage here (push to same array element as score)
+    // showHighScores();
+  }
 }
 
-function highScores() {
+function showHighScores() {
+  container.innerHTML = "";
+  let scoreTitle = document.createElement('h1');
+  scoreTitle.textContent = "High Scores";
+  container.appendChild(scoreTitle);
+
+  let highScoresList = document.createElement('h2');
 
 }

@@ -33,7 +33,7 @@
   outline: 2px solid green;
 } */
 
-.container > button {
+button {
   outline: 2px solid red;
   font-size: 15px;
   color: white;

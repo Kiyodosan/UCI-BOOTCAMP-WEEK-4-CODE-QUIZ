@@ -9,10 +9,10 @@ This is a code quiz that asks questions in a random order. Score is determined b
 
 ## How to run this project
 
-![Code Quiz demo](./assets/code quiz - demo.png)
+![Code Quiz demo](<assets/code quiz - demo.png>)
 
 Click this link to visit the site:
-[Code Quiz](https://kiyodosan.github.io/UCI-BOOTCAMP-WEEK-3-PASSWORD-GENERATOR/)
+[Code Quiz](https://kiyodosan.github.io/UCI-BOOTCAMP-WEEK-4-CODE-QUIZ/)
 
 Click the "Start Quiz" button to start the quiz and the timer.
 
